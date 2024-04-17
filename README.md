@@ -1,8 +1,12 @@
-# wokelo
+# Wokelo
 
 This project takes up a list of websites and outputs a screenshot of the websites removing any ads, cookies, popups, notifications on the website
 
-## setup
+## Code Overview
+
+[![Code Overview](https://img.youtube.com/vi/GBwQs7liVvY/0.jpg)](https://www.youtube.com/watch?v=GBwQs7liVvY&ab_channel=DivyanshJain)
+
+## Setup
 
 1. Setup python 3.12 
 2. Create a new virtual environment
