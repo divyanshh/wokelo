@@ -33,7 +33,10 @@
    https://googlechromelabs.github.io/chrome-for-testing/
    ```
    
-6. Setup your environment variables
+6. Setup your environment variables (See .env file)
+   ```
+   DRIVER_PATH = Path to where you have downloaded the chromedriver, be sure to unzip it before setting up this path
+   ```
 
 7. Run snapshot.py file
 
