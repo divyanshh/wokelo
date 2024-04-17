@@ -48,5 +48,3 @@ This project takes up a list of websites and outputs a screenshot of the website
    ![birdeye.png](images/birdeye.png)
    ![alphasense.png](images/alphasense.png)
    ![momibaby.png](images/momibaby.png)
-
-10. Future Work
