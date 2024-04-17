@@ -3,7 +3,7 @@ import time
 from selenium.common import NoSuchElementException, ElementClickInterceptedException
 from selenium.webdriver.common.by import By
 
-from src.website_handlers.abc_webite_handler import WebsiteHandler
+from src.website_handlers.abc_website_handler import WebsiteHandler
 
 
 class MomiBabyWebsiteHandler(WebsiteHandler):

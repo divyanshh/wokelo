@@ -1,6 +1,6 @@
 import time
 
-from src.website_handlers.abc_webite_handler import WebsiteHandler
+from src.website_handlers.abc_website_handler import WebsiteHandler
 
 
 class DefaultWebsiteHandler(WebsiteHandler):
