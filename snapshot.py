@@ -1,26 +1,9 @@
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.chrome.options import Options
-from selenium.common.exceptions import NoSuchElementException, ElementClickInterceptedException
+import os
 import time
 
-
-def close_modal_by_aria_label(driver):
-    label_buttons = [
-        "button[aria-label='Close dialog 1']",
-        "button[aria-label='Dismiss campaign']",
-        "button[aria-label='Close messenger prompt']"
-    ]
-    for button in label_buttons:
-        try:
-            close_button = driver.find_element(By.CSS_SELECTOR, button)
-            close_button.click()
-            print("Modal window closed.")
-        except NoSuchElementException:
-            print("Close button not found.")
-        except ElementClickInterceptedException:
-            print("Close button is not clickable.")
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
 
 
 def block_modals(driver):
@@ -34,7 +17,13 @@ def block_modals(driver):
         'div[class*=overlay]',
         'div[id*=overlay]',
         'div[class*=consent]',
-        'div[id*=consent]'
+        'div[id*=consent]',
+        'div[class*="cc-banner"]',
+        'div[id*=cc-banner]',
+        'div[class*=ccc-content]',
+        'div[id*=ccc-content]',
+        'div[class*=cookies]',
+        'div[id*=cookies]',
     ];
     modalSelectors.forEach(function(selector) {
         var modals = document.querySelectorAll(selector);
@@ -46,28 +35,9 @@ def block_modals(driver):
     driver.execute_script(script)
 
 
-def close_popups(driver):
-    popup_selectors = [
-        'div[class*="cookie"] button',
-        'div[class*="popup"] button',
-        'div[id*="advertisement"] button',
-        'button[class*="close"]'
-    ]
-    for selector in popup_selectors:
-        try:
-            popup_element = driver.find_element(By.CSS_SELECTOR, selector)
-            popup_element.click()
-            print(f"Closed popup: {selector}")
-            time.sleep(5)
-        except (NoSuchElementException, ElementClickInterceptedException):
-            continue
-
-
-def take_screenshot(url, output_file='screenshot.png'):
+def load_and_take_screenshot(url, output_file='screenshot.png'):
     chrome_options = Options()
     chrome_options.add_argument("--window-size=1920,1080")
-    chrome_options.add_argument("disable-popup-blocking")
-    chrome_options.add_argument("disable-notifications")
     prefs = {
         "excludeSwitches": ["disable-popup-blocking"],
         "profile.default_content_setting_values.cookies": 2,
@@ -75,26 +45,40 @@ def take_screenshot(url, output_file='screenshot.png'):
         "profile.default_content_setting_values.popups": 2,
     }
     chrome_options.add_experimental_option("prefs", prefs)
-    s = Service('/Users/divyansh'
-                'jain/Downloads/chromedriver-mac-arm64/chromedriver')
+    s = Service(os.getenv("DRIVER_PATH"))
     driver = webdriver.Chrome(service=s, options=chrome_options)
 
     try:
         driver.get(url)
         time.sleep(5)
-        # close_popups(driver)
-        close_modal_by_aria_label(driver)
         block_modals(driver)
-        time.sleep(3)
-        driver.save_screenshot(output_file)
-        time.sleep(5)
+        driver.save_screenshot("images/" + output_file)
         print(f"Screenshot saved as {output_file}")
     finally:
         driver.quit()
 
 
+def main():
+    os.makedirs("images", exist_ok=True)
+    websites = {
+        "https://momi.baby/": "momibaby.png",
+        "https://birdeye.com/": "birdeye.png",
+        "https://www.alpha-sense.com/": "alphasense.png",
+        "https://stackoverflow.com/": "stackoverflow.png",
+        "https://www.instagram.com/": "instagram.png",
+        "https://masterchow.in/": "masterchow.png",
+        "https://www.springeropen.com/": "springeropen.png",
+        "https://ico.org.uk/": "ico.png",
+        "https://www.iwm.org.uk/": "iwm.png",
+        "https://www.geeksforgeeks.org/": "geeksforgeeks.png",
+        "https://bmigroupinternational.com/": "bmigroupinternational.png",
+        "https://european-union.europa.eu/": "european-union.png",
+    }
+
+    for url, file_path in websites.items():
+        load_and_take_screenshot(url, file_path)
+        print(f"Taken screenshot of {url}")
+
+
 if __name__ == '__main__':
-    #take_screenshot('https://birdeye.com/', "birdeye.png")
-    #take_screenshot("https://www.alpha-sense.com/", "alphasense.png")
-    take_screenshot("https://momi.baby/", "momibaby.png")
-    # take_screenshot("https://stackoverflow.com/", "so.png")
+    main()
