@@ -40,7 +40,7 @@ This project takes up a list of websites and outputs a screenshot of the website
    DRIVER_PATH = Path to where you have downloaded the chromedriver, be sure to unzip it before setting up this path
    ```
 
-7. Run snapshot.py file
+7. Run `main.py` file
 
 8. You can see the output images in `images` folder
 
