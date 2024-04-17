@@ -18,7 +18,7 @@ Click on the below image to go to youtube
    python -m venv /path/to/new/virtual/environment
    
    # Activate env
-   /path/to/new/virtual/environment
+   /path/to/new/virtual/environment activate
    ```
 
 3. Install requirements 
