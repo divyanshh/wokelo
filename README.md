@@ -1,4 +1,6 @@
-# wokelo-assignment
+# wokelo
+
+This project takes up a list of websites and outputs a screenshot of the websites removing any ads, cookies, popups, notifications on the website
 
 ## setup
 
@@ -46,3 +48,5 @@
    ![birdeye.png](images/birdeye.png)
    ![alphasense.png](images/alphasense.png)
    ![momibaby.png](images/momibaby.png)
+
+10. Future Work
