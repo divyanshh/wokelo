@@ -41,7 +41,7 @@ Click on the below image to go to youtube
    https://googlechromelabs.github.io/chrome-for-testing/
    ```
    
-6. Setup your environment variables (See .env file)
+6. Setup your environment variables (See .env.example file)
    ```
    DRIVER_PATH = Path to where you have downloaded the chromedriver, be sure to unzip it before setting up this path
    ```
