@@ -4,6 +4,8 @@ This project takes up a list of websites and outputs a screenshot of the website
 
 ## Code Overview
 
+Click on the below image to go to youtube
+
 [![Code Overview](https://img.youtube.com/vi/GBwQs7liVvY/0.jpg)](https://www.youtube.com/watch?v=GBwQs7liVvY&ab_channel=DivyanshJain)
 
 ## Setup
