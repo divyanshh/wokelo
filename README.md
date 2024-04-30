@@ -45,15 +45,31 @@ Click on the below image to go to youtube
    ```
    DRIVER_PATH="C:\Users\divya\PycharmProjects\wokelo\chromedriver.exe"
    BRAVE_PATH="C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe"
-   USER_DATA_DIR="C:\Users\divya\AppData\Local\BraveSoftware\Brave-Browser\User Data"
-   USER_PROFILE="Default"
    ```
 
-7. Run `main.py` file
+7. Update profiles in profiles.json
+   ```
+   Syntax -> "Profile_name": "Directory"
+   {
+    "Default": "C:\\Users\\divya\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data",
+    "Profile1": "C:\\Users\\divya\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data New"
+   }
+   ```
 
-8. You can see the output images in `images` folder
+8. Update websites list in websites.json
+   ```
+   Syntax -> "Website url": "Screenshot file name"
+   {
+    "https://momi.baby/": "momibaby.png",
+    "https://birdeye.com/": "birdeye.png"
+   }
+   ```
 
-9. Sample outputs (more sample outputs in the folder)
+9. Run `main.py` file 
+
+10. You can see the output images in `images` folder
+
+11. Sample outputs (more sample outputs in the folder)
    ![birdeye.png](images/birdeye.png)
    ![alphasense.png](images/alphasense.png)
    ![momibaby.png](images/momibaby.png)
