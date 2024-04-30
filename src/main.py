@@ -8,7 +8,7 @@ IMAGES_BASE_DIR = "../images/"
 WEBSITES_FILE = "websites.json"
 
 
-def take_screenshot(driver, url, file_name):
+def save_screenshot(driver, url, file_name):
     try:
         driver.get(url)
         time.sleep(3)
@@ -26,7 +26,7 @@ def main():
     driver = Driver.setup_driver()
 
     for url, file_path in websites.items():
-        take_screenshot(driver, url, file_path)
+        save_screenshot(driver, url, file_path)
 
 
 if __name__ == '__main__':
