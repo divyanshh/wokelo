@@ -84,7 +84,7 @@ Brave comes inbuilt with 2 main features
 2. Shields
    ![brave_shields.png](readme_images/brave_shields.png)
 
-## Future Work - How to further scale this?
+## Scaling this solution - Multiple threads at a time
 
 1. Use threads and multiple windows in selenium - Not possible
    1. Multiple selenium drivers with same profile - drivers cannot share the same profile, it gets locked
@@ -97,7 +97,10 @@ Brave comes inbuilt with 2 main features
    2. The profile contains the filter lists configuration, copy and share it in the setup
       ![brave_multi_profiles.png](readme_images/brave_multi_profiles.png)
       The above screenshot shows two profiles running in parallel via selenium
-3. Use Selenium Grid
+
+## Future Work - How to further scale this?
+
+1. Use Selenium Grid
    1. With selenium grid, it's easier to scale the number of instances of the browser
    2. Selenium grid only supports Edge, Chrome and Firefox out of the box
    3. Possible ways:
