@@ -76,13 +76,18 @@ Brave comes inbuilt with 2 main features
       Exception occurred for url https://www.alpha-sense.com/ : Message: unknown error: failed to write prefs file
       ```
    2. Multiple windows with same profile - The window needs to be in focus for which ss is being taken, therefore not possible
-2. Use multiple drivers with different profiles - Possible
+2. Use multiple drivers with different profiles and use an array of servers to scale - Possible
    1. No of profiles = No of cores on the machine
    2. The profile contains the filter lists configuration, copy and share it in the setup
+      ![brave_multi_profiles.png](readme_images/brave_multi_profiles.png)
+      The above screenshot shows two profiles running in parallel via selenium
 3. Use Selenium Grid
-   1. With selenium grid, its easier to scale the number of instances of the browser
-   2. Selenium grid only supports Edge, Chrome and Firefox
+   1. With selenium grid, it's easier to scale the number of instances of the browser
+   2. Selenium grid only supports Edge, Chrome and Firefox out of the box
    3. Possible ways:
-      1. Brave is also based on Chromium, so with a bit of research it should be possible to use brave with Selenium Grid
+      1. Brave is also based on Chromium, so with some work it should be possible to use brave with Selenium Grid
       2. Use AdBlock Plus with Chrome, it has the features of using custom filter lists
          ![momibaby.png](readme_images/adblock_filter_lists.png)
+      3. Community lists can be found at https://filterlists.com/
+         ![img.png](readme_images/filterlist_website.png)
+      4. Repos for all open source filter lists: https://github.com/collinbarrett/FilterLists/blob/main/services/Directory/data/FilterList.json
