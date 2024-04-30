@@ -7,16 +7,16 @@ from selenium.webdriver.chrome.service import Service
 
 class Driver:
     @staticmethod
-    def setup_driver():
+    def setup_driver(user_profile, user_data_dir):
+        driver_path = os.getenv("DRIVER_PATH")
+        brave_path = os.getenv("BRAVE_PATH")
+
         chrome_options = Options()
+        chrome_options.binary_location = brave_path
         chrome_options.add_argument("--window-size=1920,1080")
-        prefs = {
-            "excludeSwitches": ["disable-popup-blocking"],
-            "profile.default_content_setting_values.cookies": 2,
-            "profile.default_content_setting_values.notifications": 2,
-            "profile.default_content_setting_values.popups": 2,
-        }
-        chrome_options.add_experimental_option("prefs", prefs)
-        s = Service(os.getenv("DRIVER_PATH"))
+        chrome_options.add_argument("--user-data-dir={}".format(user_data_dir))
+        chrome_options.add_argument("--profile-directory={}".format(user_profile))
+
+        s = Service(driver_path)
         driver = webdriver.Chrome(service=s, options=chrome_options)
         return driver
