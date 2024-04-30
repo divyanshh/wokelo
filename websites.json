@@ -15,11 +15,11 @@
     "https://www.cookieserve.com/": "cookieserve.png",
     "https://www.makemytrip.com/": "makemytrip.png",
     "https://www.kaggle.com/datasets/lava18/google-play-store-apps": "kaggle.png",
-    "https://www.westminster-abbey.org/about-the-abbey/privacy-policy/cookies": "westminster.png",
+    "https://www.westminster-abbey.org/": "westminster.png",
     "https://www.templafy.com": "templafy.png",
     "https://www.sdcard.org": "sdcard.png",
     "https://www.deif.com/cookies/cookielist/": "deif.png",
-    "https://www.allstemconnections.com/cookie-list.aspx": "allstemconnections.png",
+    "https://www.allstemconnections.com/": "allstemconnections.png",
     "https://termly.io/resources/articles/does-my-website-use-cookies/": "termly.png",
     "https://www.bucherer.com": "bucherer.png",
     "https://www.gsmatraining.com/cookie-list/": "gsmatraining.png",
@@ -27,5 +27,6 @@
     "https://www.qr-code-generator.com/": "qr-code-generator.png",
     "https://clym.io/": "clym.png",
     "https://www.lambdatest.com/blog/selenium-grid-setup-tutorial/": "lambdatest.png",
-    "https://www.browserstack.com/guide/parallel-testing-with-selenium": "browserstack.png"
+    "https://www.browserstack.com/guide/parallel-testing-with-selenium": "browserstack.png",
+    "https://www.guru99.com/introduction-to-selenium-grid.html": "guru99.png"
 }

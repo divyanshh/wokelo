@@ -5,13 +5,13 @@ import time
 from src.driver import Driver
 
 IMAGES_BASE_DIR = "../images/"
-WEBSITES_FILE = "websites.json"
+WEBSITES_FILE = "../websites.json"
 
 
 def save_screenshot(driver, url, file_name):
     try:
         driver.get(url)
-        time.sleep(3)
+        time.sleep(5)
         driver.save_screenshot(IMAGES_BASE_DIR + file_name)
         print(f"Screenshot saved as {file_name} for url {url}")
     except Exception as ex:
@@ -27,6 +27,8 @@ def main():
 
     for url, file_path in websites.items():
         save_screenshot(driver, url, file_path)
+
+    driver.quit()
 
 
 if __name__ == '__main__':
