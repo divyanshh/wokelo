@@ -4,28 +4,29 @@ import time
 
 from src.driver import Driver
 
+IMAGES_BASE_DIR = "../images/"
+WEBSITES_FILE = "websites.json"
 
-def take_screenshot(driver, url, file_path):
-    driver.get(url)
-    time.sleep(3)
-    driver.save_screenshot("../images/" + file_path)
-    print(f"Screenshot saved as {file_path}")
-    print(f"Taken screenshot of {url}")
+
+def take_screenshot(driver, url, file_name):
+    try:
+        driver.get(url)
+        time.sleep(3)
+        driver.save_screenshot(IMAGES_BASE_DIR + file_name)
+        print(f"Screenshot saved as {file_name} for url {url}")
+    except Exception as ex:
+        print(f"Exception occurred for url {url} : {ex}")
 
 
 def main():
-    os.makedirs("../images", exist_ok=True)
-    with open("websites.json", "r") as file:
+    os.makedirs(IMAGES_BASE_DIR, exist_ok=True)
+    with open(WEBSITES_FILE, "r") as file:
         websites = json.load(file)
 
     driver = Driver.setup_driver()
 
     for url, file_path in websites.items():
-        driver.get(url)
-        time.sleep(3)
-        driver.save_screenshot("../images/" + file_path)
-        print(f"Screenshot saved as {file_path}")
-        print(f"Taken screenshot of {url}")
+        take_screenshot(driver, url, file_path)
 
 
 if __name__ == '__main__':
