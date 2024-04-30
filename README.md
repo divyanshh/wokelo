@@ -54,3 +54,10 @@ Click on the below image to go to youtube
    ![birdeye.png](images/birdeye.png)
    ![alphasense.png](images/alphasense.png)
    ![momibaby.png](images/momibaby.png)
+
+
+https://stackoverflow.com/questions/31062789/how-to-load-default-profile-in-chrome-using-python-selenium-webdriver
+
+brave://version/
+
+C:\Users\divya\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default
